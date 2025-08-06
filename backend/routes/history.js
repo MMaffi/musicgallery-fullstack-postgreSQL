@@ -10,8 +10,8 @@ router.get('/', requireAuth, async (req, res) => {
   const { id } = req.user;
 
   try {
-    const [rows] = await pool.query(
-      'SELECT term FROM search_history WHERE user_id = ? ORDER BY timestamp DESC LIMIT 10',
+    const { rows } = await pool.query(
+      'SELECT term FROM search_history WHERE user_id = $1 ORDER BY timestamp DESC LIMIT 10',
       [id]
     );
 
@@ -35,8 +35,8 @@ router.post('/', requireAuth, async (req, res) => {
 
   try {
     // Verifica se o último termo é igual ao atual
-    const [lastSearch] = await pool.query(
-      'SELECT term FROM search_history WHERE user_id = ? ORDER BY timestamp DESC LIMIT 1',
+    const { rows: lastSearch } = await pool.query(
+      'SELECT term FROM search_history WHERE user_id = $1 ORDER BY timestamp DESC LIMIT 1',
       [id]
     );
 
@@ -46,23 +46,23 @@ router.post('/', requireAuth, async (req, res) => {
 
     // Insere novo termo
     await pool.query(
-      'INSERT INTO search_history (user_id, term) VALUES (?, ?)',
+      'INSERT INTO search_history (user_id, term) VALUES ($1, $2)',
       [id, trimmedTerm]
     );
 
     // Remove termos antigos se passar de 10
     await pool.query(
-      `DELETE FROM search_history
-       WHERE user_id = ?
-       AND id NOT IN (
-         SELECT id FROM (
-           SELECT id FROM search_history
-           WHERE user_id = ?
-           ORDER BY timestamp DESC
-           LIMIT 10
-         ) AS sub
-       )`,
-      [id, id]
+      `
+      DELETE FROM search_history
+      WHERE user_id = $1
+      AND id NOT IN (
+        SELECT id FROM search_history
+        WHERE user_id = $1
+        ORDER BY timestamp DESC
+        LIMIT 10
+      )
+      `,
+      [id]
     );
 
     res.status(201).json({ success: true });
@@ -77,7 +77,7 @@ router.delete('/', requireAuth, async (req, res) => {
   const { id } = req.user;
 
   try {
-    await pool.query('DELETE FROM search_history WHERE user_id = ?', [id]);
+    await pool.query('DELETE FROM search_history WHERE user_id = $1', [id]);
     res.status(200).json({ message: 'Histórico apagado com sucesso' });
   } catch (err) {
     console.error('Erro ao apagar histórico:', err);

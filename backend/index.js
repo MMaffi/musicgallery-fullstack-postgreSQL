@@ -36,10 +36,6 @@ app.listen(PORT, () => {
     console.log(`✅ Servidor rodando na porta ${PORT}`);
 });
 
-// Rota de musicas
-const musicRoutes = require('./routes/musics');
-app.use('/api/musics', musicRoutes);
-
 // Rota da api youtube
 const youtubeRoutes = require('./routes/youtube');
 app.use('/api/youtube', youtubeRoutes);
