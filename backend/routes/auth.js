@@ -5,6 +5,7 @@ const db = require('../db/conn');
 const router = express.Router();
 
 const SECRET = process.env.JWT_SECRET || 'sua_chave_secreta';
+const isProduction = (process.env.NODE_ENV || 'production') === 'production';
 
 // Registro
 router.post('/register', async (req, res) => {
@@ -22,7 +23,6 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     console.error('Erro ao inserir usuário:', error);
 
-    // Código 23505 = violação de unicidade no PostgreSQL
     if (error.code === '23505') {
       return res.status(409).json({ message: 'E-mail já cadastrado' });
     }
@@ -55,9 +55,9 @@ router.post('/login', async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-      maxAge: 15 * 24 * 60 * 60 * 1000,
+      secure: isProduction,
+      sameSite: isProduction ? 'none' : 'lax',
+      maxAge: 15 * 24 * 60 * 60 * 1000, // 15 dias
     });
 
     res.json({ name: user.name });
@@ -71,13 +71,14 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'none',
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
   });
 
   res.json({ message: 'Logout efetuado' });
 });
 
+// Middleware de autenticação
 const authenticate = require('../middleware/auth');
 
 // Perfil do usuário autenticado

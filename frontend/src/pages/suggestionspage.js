@@ -5,6 +5,9 @@ import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
+// Variavel do DotEnv
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 function SuggestionsPage() {
   const { t } = useTranslation();
   const { user, loading } = useContext(AuthContext);
@@ -37,7 +40,7 @@ function SuggestionsPage() {
     setLoadingSubmit(true);
 
     try {
-      const res = await fetch('http://localhost:3000/api/suggestions/send', {
+      const res = await fetch(`${API_BASE_URL}/api/suggestions/send`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
