@@ -1,0 +1,126 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-page {
+  width: 60%;
+  max-width: 700px;
+  padding: 2rem 2.5rem;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-color: #222235;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.register-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 0;
+  color: #f0db4f;
+}
+
+.register-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.register-page label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: -10px;
+  margin-left: 5px;
+}
+
+.register-page input {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2c2c47;
+  color: #fff;
+  transition: outline 0.2s ease;
+}
+
+.register-page input:focus {
+  outline: 2px solid #f0db4f;
+}
+
+.register-page button {
+  margin-top: 40px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #f0db4f;
+  color: #1e1e2f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.register-page button:hover {
+  background-color: #e6c843;
+}
+
+.status-message {
+  min-height: 40px;
+  margin-top: 1rem;
+}
+
+.success-msg,
+.error-msg {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+
+.success-msg {
+  color: #82f382;
+}
+
+.error-msg {
+  color: #ff6464;
+}
+
+.linklogin {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.linklogin a {
+  color: #f0db4f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.linklogin a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+
+  .register-page h2 {
+    font-size: 1.3rem;
+  }
+
+  .register-page input,
+  .register-page button {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Home",
+    "videos": "Videos",
+    "results_for": "Results for \"{{query}}\"",
+    "about": "About",
+    "suggestions": "Suggestions",
+    "search_placeholder": "Search...",
+    "search_aria_label": "Search",
+    "all_videos": "All Videos"
+  },
+
+  "featured": {
+    "watch": "WATCH"
+  },
+
+  "videos": {
+    "not_found": "No videos found.",
+    "views": "{{count}} views"
+  },
+
+  "player": {
+    "views": "views"
+  },
+
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+
+  "home": {
+    "recent_videos": "Recent Videos"
+  },
+
+  "about": {
+    "title": "About Music Gallery",
+    "p1": "Hello! I am <bold1>Mateus Maffi</bold1>, a passionate musician and creator of <bold2>Music Gallery</bold2>. This space was created with the purpose of sharing my musical journey through <bold3>covers of national and international songs</bold3>, performed with great feeling and dedication.",
+    "p2": "Music has been part of my life since an early age. Over the years, I have learned to play and develop my voice, always striving to convey the essence of each song. Every video here represents a bit of my artistic identity and what I believe in music: <italic>emotion, authenticity, and connection</italic>.",
+    "p3": "At <bold1>Music Gallery</bold1>, you will find covers from various genres — from <italic2>sertanejo to MPB, from pop to rock</italic2> — all recorded with care, creativity, and attention to detail.",
+    "p4": "Feel free to explore the videos, leave suggestions, follow me on social media, and, of course, share with friends! This project is made with love and is constantly evolving.",
+    "p5": "Thank you for being part of this. 🎵"
+  },
+
+  "suggestions": {
+    "title": "Suggest a song for the next cover 🎤",
+    "song_label": "Song name:",
+    "song_placeholder": "Ex: Trem Bala",
+    "artist_label": "Singer or band name:",
+    "artist_placeholder": "Ex: Ana Vilela",
+    "comment_label": "Comment (optional):",
+    "comment_placeholder": "Anything you'd like to say about the suggestion?",
+    "submit": "Submit suggestion",
+    "sending": "Sending...",
+    "success_message": "Thank you for your suggestion! 🎶",
+    "error_message": "An error occurred while sending the suggestion.",
+    "connection_error": "Connection error with the server.",
+    "loading": "Loading..."
+  },
+
+  "logout": {
+    "success": "Successfully logged out!",
+    "error": "Error logging out",
+    "button": "Logout"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "login_required": "⚠️ You need to be logged in to access the settings.",
+    "language": "Language",
+    "theme": "Theme",
+    "notifications": "Notifications",
+    "enable_notifications": "Enable notifications",
+    "disable_notifications": "Disable notifications",
+    "history": "History",
+    "clear_history": "Clear history",
+    "history_cleared": "Search history cleared successfully!",
+    "greeting": "Hello",
+    "by": "by"
+  },
+  "languages": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "themes": {
+    "dark": "🌙 Dark",
+    "light": "☀️ Light",
+    "system": "🖥️ System"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register"
+  }
+}

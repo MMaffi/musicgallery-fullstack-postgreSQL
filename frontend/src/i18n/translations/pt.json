@@ -1,0 +1,96 @@
+{
+  "navbar": {
+    "home": "Início",
+    "videos": "Vídeos",
+    "results_for": "Resultados para \"{{query}}\"",
+    "about": "Sobre",
+    "suggestions": "Sugestões",
+    "search_placeholder": "Buscar...",
+    "search_aria_label": "Buscar",
+    "all_videos": "Todos os Vídeos"
+  },
+
+  "featured": {
+    "watch": "ASSISTIR"
+  },
+
+  "videos": {
+    "not_found": "Nenhum vídeo encontrado.",
+    "views": "{{count}} visualizações"
+  },
+
+  "player": {
+    "views": "vizualizações"
+  },
+
+  "footer": {
+    "copyright": "Todos os direitos reservados"
+  },
+
+  "home": {
+    "recent_videos": "Vídeos Recentes"
+  },
+
+  "about": {
+    "title": "Sobre o Music Gallery",
+    "p1": "Olá! Eu sou <bold1>Mateus Maffi</bold1>, músico apaixonado e criador do <bold2>Music Gallery</bold2>. Esse espaço nasceu com o objetivo de compartilhar minha jornada musical por meio de <bold3>covers de músicas nacionais e internacionais</bold3>, interpretadas com muito sentimento e dedicação.",
+    "p2": "Desde muito cedo, a música faz parte da minha vida. Ao longo dos anos, aprendi a tocar e desenvolver minha voz, buscando sempre transmitir a essência de cada canção. Cada vídeo aqui representa um pouco da minha identidade artística e do que acredito na música: <italic>emoção, autenticidade e conexão</italic>.",
+    "p3": "No <bold1>Music Gallery</bold1> você encontrará covers de diversos gêneros — do <italic2>sertanejo ao MPB, do pop ao rock</italic2> — todos gravados com carinho, criatividade e atenção aos detalhes.",
+    "p4": "Sinta-se à vontade para explorar os vídeos, deixar sugestões, me acompanhar nas redes sociais e, claro, compartilhar com amigos! Este projeto é feito com amor e está em constante evolução.",
+    "p5": "Obrigado por fazer parte disso. 🎵"
+  },
+
+  "suggestions": {
+    "title": "Sugira uma música para o próximo cover 🎤",
+    "song_label": "Nome da música:",
+    "song_placeholder": "Ex: Trem Bala",
+    "artist_label": "Nome do cantor ou banda:",
+    "artist_placeholder": "Ex: Ana Vilela",
+    "comment_label": "Comentário (opcional):",
+    "comment_placeholder": "Algo que queira comentar sobre a sugestão?",
+    "submit": "Enviar sugestão",
+    "sending": "Enviando...",
+    "success_message": "Obrigado pela sugestão! 🎶",
+    "error_message": "Ocorreu um erro ao enviar a sugestão.",
+    "connection_error": "Erro na conexão com o servidor.",
+    "loading": "Carregando..."
+  },
+
+  "logout": {
+    "success": "Logout realizado com sucesso!",
+    "error": "Erro ao fazer logout",
+    "button": "Sair"
+  },
+
+  "settings": {
+    "title": "Configurações",
+    "login_required": "Para acessar as configurações, é necessário estar logado.",
+    "language": "Idioma",
+    "theme": "Tema",
+    "notifications": "Notificações",
+    "enable_notifications": "Ativar notificações",
+    "disable_notifications": "Desativar notificações",
+    "history": "Histórico",
+    "clear_history": "Limpar histórico",
+    "history_cleared": "Histórico limpo com sucesso!",
+    "greeting": "Olá",
+    "by": "por"
+  },
+
+  "languages": {
+    "pt": "Português",
+    "en": "Inglês",
+    "es": "Espanhol"
+  },
+
+  "themes": {
+    "dark": "🌙 Escuro",
+    "light": "☀️ Claro",
+    "system": "🖥️ Sistema"
+  },
+
+  "auth": {
+    "login": "Login",
+    "register": "Registrar"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "videos": "Videos",
+    "results_for": "Resultados para \"{{query}}\"",
+    "about": "Acerca de",
+    "suggestions": "Sugerencias",
+    "search_placeholder": "Buscar...",
+    "search_aria_label": "Buscar",
+    "all_videos": "Todos los Videos"
+  },
+
+  "featured": {
+    "watch": "VER"
+  },
+
+  "videos": {
+    "not_found": "No se encontraron videos.",
+    "views": "{{count}} vistas"
+  },
+
+  "player": {
+    "views": "visualizaciones"
+  },
+
+  "footer": {
+    "copyright": "Todos los derechos reservados"
+  },
+
+  "home": {
+    "recent_videos": "Videos Recientes"
+  },
+
+  "about": {
+    "title": "Acerca de Music Gallery",
+    "p1": "¡Hola! Soy <bold1>Mateus Maffi</bold1>, músico apasionado y creador de <bold2>Music Gallery</bold2>. Este espacio nació con el propósito de compartir mi trayectoria musical a través de <bold3>covers de canciones nacionales e internacionales</bold3>, interpretadas con mucho sentimiento y dedicación.",
+    "p2": "La música ha formado parte de mi vida desde muy pequeño. A lo largo de los años, he aprendido a tocar y desarrollar mi voz, siempre buscando transmitir la esencia de cada canción. Cada video aquí representa un poco de mi identidad artística y de lo que creo en la música: <italic>emoción, autenticidad y conexión</italic>.",
+    "p3": "En <bold1>Music Gallery</bold1> encontrarás covers de diversos géneros — desde <italic2>sertanejo hasta MPB, del pop al rock</italic2> — todos grabados con cariño, creatividad y atención a los detalles.",
+    "p4": "Siéntete libre de explorar los videos, dejar sugerencias, seguirme en las redes sociales y, por supuesto, compartir con amigos. ¡Este proyecto está hecho con amor y en constante evolución!",
+    "p5": "Gracias por ser parte de esto. 🎵"
+  },
+
+  "suggestions": {
+    "title": "Sugiere una canción para el próximo cover 🎤",
+    "song_label": "Nombre de la canción:",
+    "song_placeholder": "Ej: Trem Bala",
+    "artist_label": "Nombre del cantante o banda:",
+    "artist_placeholder": "Ej: Ana Vilela",
+    "comment_label": "Comentario (opcional):",
+    "comment_placeholder": "¿Algo que quieras comentar sobre la sugerencia?",
+    "submit": "Enviar sugerencia",
+    "sending": "Enviando...",
+    "success_message": "¡Gracias por tu sugerencia! 🎶",
+    "error_message": "Ocurrió un error al enviar la sugerencia.",
+    "connection_error": "Error de conexión con el servidor.",
+    "loading": "Cargando..."
+  },
+
+  "logout": {
+    "success": "¡Cierre de sesión exitoso!",
+    "error": "Error al cerrar sesión",
+    "button": "Salir"
+  },
+
+  "settings": {
+    "title": "Configuración",
+    "login_required": "⚠️ Necesitas iniciar sesión para acceder a la configuración.",
+    "language": "Idioma",
+    "theme": "Tema",
+    "notifications": "Notificaciones",
+    "enable_notifications": "Activar notificaciones",
+    "disable_notifications": "Desactivar notificaciones",
+    "history": "Historial",
+    "clear_history": "Limpiar historial",
+    "history_cleared": "¡Historial de búsqueda eliminado con éxito!",
+    "greeting": "Hola",
+    "by": "por"
+  },
+  "languages": {
+    "pt": "Portugués",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "themes": {
+    "dark": "🌙 Oscuro",
+    "light": "☀️ Claro",
+    "system": "🖥️ Sistema"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse"
+  }
+}
