@@ -17,59 +17,12 @@ import SuggestionsPage from './pages/suggestionspage';
 import RegisterPage from './pages/registerpage';
 import LoginPage from './pages/loginpage';
 
-const mockVideos = [
-  {
-    id: 'F8yG_Pe9y6o',
-    title: 'Rick Astley - Never Gonna Give You Up',
-    artist: 'Rick Astley',
-    thumbnail_url: 'https://img.youtube.com/vi/F8yG_Pe9y6o/hqdefault.jpg',
-    video_url: 'https://www.youtube.com/watch?v=F8yG_Pe9y6o',
-    publishedAt: '1987-10-25T00:00:00Z',
-    views: 9999999
-  },
-  {
-    id: '3JZ_D3ELwOQ',
-    title: 'Mark Ronson - Uptown Funk ft. Bruno Mars',
-    artist: 'Mark Ronson',
-    thumbnail_url: 'https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg',
-    video_url: 'https://www.youtube.com/watch?v=3JZ_D3ELwOQ',
-    publishedAt: '2014-11-19T00:00:00Z',
-    views: 8888888
-  },
-  {
-    id: 'dQw4w9WgXcQ',
-    title: 'Rick Astley - Never Gonna Give You Up',
-    artist: 'Rick Astley',
-    thumbnail_url: 'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
-    video_url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    publishedAt: '1987-10-25T00:00:00Z',
-    views: 9999999
-  },
-  {
-    id: 'zOIND7DFRg4',
-    title: 'Mark Ronson - Uptown Funk ft. Bruno Mars',
-    artist: 'Mark Ronson',
-    thumbnail_url: 'https://img.youtube.com/vi/zOIND7DFRg4/hqdefault.jpg',
-    video_url: 'https://www.youtube.com/watch?v=zOIND7DFRg4',
-    publishedAt: '2014-11-19T00:00:00Z',
-    views: 8888888
-  },
-  {
-    id: '814SoGI3Nus',
-    title: 'Rick Astley - Never Gonna Give You Up',
-    artist: 'Rick Astley',
-    thumbnail_url: 'https://img.youtube.com/vi/814SoGI3Nus/hqdefault.jpg',
-    video_url: 'https://www.youtube.com/watch?v=814SoGI3Nus',
-    publishedAt: '1987-10-25T00:00:00Z',
-    views: 9999999
-  }
-];
-
 function App() {
   const { t } = useTranslation();
   const { settings } = useContext(SettingsContext);
 
-  const [videos] = useState(mockVideos);
+  const [videos, setVideos] = useState([]);
+  const [loadingVideos, setLoadingVideos] = useState(true);
   const [showPlayer, setShowPlayer] = useState(false);
   const [playerVideo, setPlayerVideo] = useState(null);
   const [featured, setFeatured] = useState(null);
@@ -92,11 +45,28 @@ function App() {
   }, [settings]);
 
   useEffect(() => {
-    if (videos.length > 0) {
+    const fetchVideos = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/youtube`);
+        if (!res.ok) throw new Error('Erro ao buscar vídeos da API');
+        const data = await res.json();
+        setVideos(data);
+      } catch (err) {
+        console.error('Erro ao buscar vídeos da API:', err);
+      } finally {
+        setLoadingVideos(false);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
+  useEffect(() => {
+    if (!loadingVideos && videos.length > 0) {
       const randomIndex = Math.floor(Math.random() * videos.length);
       setFeatured(videos[randomIndex]);
     }
-  }, [videos]);
+  }, [loadingVideos, videos]);
 
   useEffect(() => {
     document.body.style.overflow = showPlayer ? 'hidden' : '';
@@ -120,24 +90,29 @@ function App() {
       <AuthProvider>
         <div className="app">
           <Navbar videos={videos} />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home videos={videos} openPlayer={openPlayer} featured={featured} />
-              }
-            />
-            <Route
-              path="/videos"
-              element={
-                <VideosPage videos={videos} openPlayer={openPlayer} />
-              }
-            />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/suggestions" element={<SuggestionsPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Routes>
+
+          {loadingVideos ? (
+            <main style={{ padding: '2rem', textAlign: 'center' }}>
+              <p>{t('loading.videos') || 'Carregando vídeos...'}</p>
+            </main>
+          ) : (
+            <>
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Home videos={videos} openPlayer={openPlayer} featured={featured} />}
+                />
+                <Route
+                  path="/videos"
+                  element={<VideosPage videos={videos} openPlayer={openPlayer} />}
+                />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/suggestions" element={<SuggestionsPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+              </Routes>
+            </>
+          )}
 
           {showPlayer && playerVideo && (
             <div id="player-modal" className="modal">
@@ -155,7 +130,7 @@ function App() {
                       ? new Date(playerVideo.publishedAt).toLocaleDateString(i18n.language, {
                           year: 'numeric',
                           month: 'long',
-                          day: 'numeric'
+                          day: 'numeric',
                         })
                       : ''}
                   </span>
@@ -175,11 +150,7 @@ function App() {
 
           <Footer />
           <SettingsModal />
-          <ToastContainer 
-            position="top-right" 
-            autoClose={3000}
-            style={{ zIndex: 99999 }}
-          />
+          <ToastContainer position="top-right" autoClose={3000} style={{ zIndex: 99999 }} />
         </div>
       </AuthProvider>
     </Router>
