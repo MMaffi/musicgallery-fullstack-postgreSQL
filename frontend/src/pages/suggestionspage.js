@@ -54,6 +54,9 @@ function SuggestionsPage() {
       if (res.ok) {
         toast.success(t('suggestions.success_message'));
         setFormData({ song: '', artist: '', suggestion: '' });
+      } else if (res.status === 429) {
+        const data = await res.json();
+        toast.warning(data.error || t('suggestions.cooldown_message'));
       } else {
         toast.error(t('suggestions.error_message'));
       }

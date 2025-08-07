@@ -53,6 +53,7 @@
     "success_message": "¡Gracias por tu sugerencia! 🎶",
     "error_message": "Ocurrió un error al enviar la sugerencia.",
     "connection_error": "Error de conexión con el servidor.",
+    "cooldown_message": "Debes esperar antes de enviar otra sugerencia.",
     "loading": "Cargando..."
   },
 
