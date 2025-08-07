@@ -1,0 +1,14 @@
+name: Keep Backend Alive
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # A cada 10 minutos
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fazendo requisição para manter backend vivo
+        run: curl -s -o /dev/null -w "%{http_code}" https://musicgallery.onrender.com/api/auth/me
