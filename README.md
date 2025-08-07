@@ -5,7 +5,7 @@
 [![GitHub License](https://img.shields.io/github/license/MMaffi/musicgallery-fullstack?style=flat-square)](LICENSE)
 [![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=fff&style=flat-square)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js&logoColor=fff&style=flat-square)](https://nodejs.org/)
-[![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=fff&style=flat-square)](https://www.mysql.com/)
+[![PostgreSQL](https://img.shields.io/badge/Database-postgreSQL-4479A1?logo=postgreSQL&logoColor=fff&style=flat-square)](https://www.mysql.com/)
 
 ---
 
@@ -13,7 +13,7 @@
 
 **Music Gallery Fullstack** is the advanced version of the static website [Music Gallery](https://mmaffi.github.io/MusicGallery), now with complete features such as:
 
-- User authentication and Google login
+- User authentication and login
 - Personalized settings persisted in the database
 - Light/dark theme with per-user preferences
 - Multilanguage support (i18n with `react-i18next`)
@@ -80,7 +80,7 @@ musicgallery-fullstack/
 |---------------|------------------------------------------------------------------------|
 | Frontend      | React, Vite, CSS, i18next                                              |
 | Backend       | Node.js, Express, Nodemailer                                           |
-| Database      | MySQL                                                                  |
+| Database      | PostgreSQL                                                             |
 | External APIs | YouTube Data API v3                                                    |
 ```
 
@@ -91,7 +91,7 @@ musicgallery-fullstack/
 ### 🔧 Prerequisites
 
 - Node.js ≥ 18  
-- MySQL ≥ 8  
+- PostgreSQL ≥ 15  
 
 ### 📦 Installation
 
@@ -115,23 +115,6 @@ npm run build
 cd frontend
 npm install
 npm run build
-```
-
-## 🌐 Environment Variables
-
-### Backend (`.env`)
-
-```env
-PORT=3000
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=YOUR_PASSWORD
-DB_NAME=YOUR_DB_NAME
-YOUTUBE_API_KEY=YOUR_YOUTUBE_API_KEY
-YOUTUBE_CHANNEL_ID=YOUR_YOUTUBE_CHANNEL_ID
-EMAIL_USER=youremail@gmail.com
-EMAIL_PASS=your_app_password
-JWT_SECRET=your_secret_key
 ```
 
 ## 🧪 Future Improvements
