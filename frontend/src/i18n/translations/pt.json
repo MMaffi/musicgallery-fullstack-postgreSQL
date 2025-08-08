@@ -16,7 +16,8 @@
 
   "videos": {
     "not_found": "Nenhum vídeo encontrado.",
-    "views": "{{count}} visualizações"
+    "views": "{{count}} visualizações",
+    "loading": "Carregando..."
   },
 
   "player": {
