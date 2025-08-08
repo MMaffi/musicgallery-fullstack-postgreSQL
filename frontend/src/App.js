@@ -93,7 +93,7 @@ function App() {
 
           {loadingVideos ? (
             <main style={{ padding: '2rem', textAlign: 'center' }}>
-              <p>{t('loading.videos') || 'Carregando vídeos...'}</p>
+              <p>{t('videos.loading') || 'Carregando vídeos...'}</p>
             </main>
           ) : (
             <>
