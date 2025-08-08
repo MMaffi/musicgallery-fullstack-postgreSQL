@@ -1,13 +1,23 @@
-import { Tabs } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: "#FFD300", // Cor quando ativo
+        tabBarInactiveTintColor: "#aaa",  // Cor quando inativo
+        tabBarStyle: {
+          backgroundColor: "#0a0a0a", // Fundo da barra
+          borderTopColor: "transparent",
+        },
+      }}
+    >
       <Tabs.Screen
         name="home"
         options={{
-          title: 'Início',
+          title: "Início",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
           ),
@@ -16,7 +26,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="videos"
         options={{
-          title: 'Vídeos',
+          title: "Vídeos",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="play-circle" size={size} color={color} />
           ),
@@ -25,7 +35,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="suggestions"
         options={{
-          title: 'Sugestões',
+          title: "Sugestões",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="chatbubbles" size={size} color={color} />
           ),
@@ -34,7 +44,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="config"
         options={{
-          title: 'Configurações',
+          title: "Configurações",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings" size={size} color={color} />
           ),
