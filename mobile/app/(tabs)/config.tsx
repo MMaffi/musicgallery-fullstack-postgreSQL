@@ -37,7 +37,7 @@ export default function Settings() {
 
         <View style={styles.item}>
           <Ionicons name="sunny" size={24} color="#FFD300" />
-          <Text style={styles.itemText}>Modo Escuro</Text>
+          <Text style={styles.itemText}>Modo Claro</Text>
           <Switch
             value={lightmode}
             onValueChange={setLightmode}
